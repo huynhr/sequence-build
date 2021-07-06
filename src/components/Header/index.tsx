@@ -1,9 +1,9 @@
-import React from 'react';
+import logo from '../../assets/sequence_logo.png'
 
-const Header = () => {
-  return (
-    <div>Header Here</div>
-  )
-}
+const Header = () => (
+  <div>
+    <img src={logo} alt="logo" />
+  </div>
+)
 
-export default Header;
+export default Header
