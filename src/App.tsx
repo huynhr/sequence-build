@@ -3,11 +3,17 @@ import { Header } from './components'
 
 function App() {
   return (
-    <div css={{ background: 'black', height: '100vh' }}>
+    <div>
+      <div
+        css={{
+          'background': 'black',
+          'height': '100vh',
+          'width': '100vw',
+          'position': 'absolute',
+          'z-index': '-1',
+        }}
+      />
       <Header />
-      <button onClick={() => console.log('hello world')} type="button">
-        Click Me!
-      </button>
     </div>
   )
 }
