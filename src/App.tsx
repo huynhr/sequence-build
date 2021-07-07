@@ -1,7 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { Header } from './components'
-import Card from './components/Card'
 import colors from './utils/colors'
+import cardGridData from './utils/cardGridData.json'
+import CardGrid from './components/CardGrid/index'
 
 function App() {
   return (
@@ -9,16 +10,15 @@ function App() {
       <div
         css={{
           'background': colors.black,
-          'height': '100vh',
+          'height': '100%',
+          'max-height': '100%',
           'width': '100vw',
           'position': 'absolute',
           'z-index': '-1',
         }}
       />
       <Header />
-      <div css={{ maxWidth: '500px', height: '300px' }}>
-        <Card />
-      </div>
+      <CardGrid data={cardGridData} />
     </div>
   )
 }
