@@ -32,7 +32,13 @@ const Card = ({ title, description }: Props) => {
       onMouseEnter={() => setIsShown(true)}
       onMouseLeave={() => setIsShown(false)}
     >
-      {!isShown && <h4 css={{ fontSize: `${isDesktop ? '18px' : '16px'}` }}>{title}</h4>}
+      {!isShown && (
+        <h4
+          css={{ fontSize: `${isDesktop ? '18px' : '16px'}`, textAlign: `${isDesktop ? 'start' : 'center'}` }}
+        >
+          {title}
+        </h4>
+      )}
       {isShown && (
         <p
           css={{
@@ -42,8 +48,8 @@ const Card = ({ title, description }: Props) => {
             top: 0,
             overflow: 'auto',
             maxWidth: '100%',
-            textAlign: 'start',
             fontSize: `${isDesktop ? '18px' : '16px'}`,
+            textAlign: `${isDesktop ? 'start' : 'center'}`,
           }}
         >
           {description}
