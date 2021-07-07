@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import colors from '../../utils/colors'
+import Input from '../Input'
 
 const Form = () => (
   <section css={{ margin: '20px auto', padding: '24px', maxWidth: '72rem' }}>
@@ -18,6 +19,9 @@ const Form = () => (
         For additional support, reach out below.
       </p>
     </div>
+    <form>
+      <Input label="Your Email" name="email" value="" onChange={() => {}} />
+    </form>
   </section>
 )
 
