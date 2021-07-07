@@ -1,5 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
+import colors from '../../utils/colors'
+
 interface inputProps {
   label: string
   name: string
@@ -9,7 +11,9 @@ interface inputProps {
 
 const Input = ({ label, name, value, onChange }: inputProps) => (
   <div css={{ display: 'flex', flexDirection: 'column' }}>
-    <label htmlFor={name}>{label}</label>
+    <label htmlFor={name} css={{ 'marginBottom': '10px', 'color': colors.disabled, 'font-weight': '500' }}>
+      {label}
+    </label>
     <input
       css={{
         border: '2px solid #2a2a2a',
