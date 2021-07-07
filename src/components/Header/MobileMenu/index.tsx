@@ -4,6 +4,8 @@ import HamburgerMenu from '../../../assets/mobile_menu.png'
 import MobileLogo from '../../../assets/mobile_logo.png'
 import CloseIcon from '../../../assets/close_button.png'
 import colors from '../../../utils/colors'
+import Menu, { MenuItem } from '../../Menu'
+import Button from '../../Button'
 
 const MobileMenu = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -33,6 +35,26 @@ const MobileMenu = () => {
             <button type="button" onClick={() => setMenuOpen(false)}>
               <img src={CloseIcon} alt="close menu" css={{ height: '55px' }} />
             </button>
+          </section>
+          <section
+            css={{
+              padding: '24px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-around',
+            }}
+          >
+            <Menu flexDirection="column">
+              <MenuItem disabled link="#">
+                Docs
+              </MenuItem>
+              <MenuItem link="#">Github</MenuItem>
+              <MenuItem link="#">Discord</MenuItem>
+              <MenuItem link="#">Contact</MenuItem>
+            </Menu>
+          </section>
+          <section css={{ padding: '24px' }}>
+            <Button text="Launch Wallet" />
           </section>
         </div>
       )}

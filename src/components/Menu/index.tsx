@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { ReactNode } from 'react'
+import { useMediaQuery } from 'react-responsive'
 import colors from '../../utils/colors'
 
 interface MenuItemProps {
@@ -12,20 +13,29 @@ const menuItemDefaultProps = {
   disabled: false,
 }
 
-export const MenuItem = ({ children, link, disabled }: MenuItemProps) => (
-  <a
-    href={link}
-    css={{
-      'pointerEvents': disabled ? 'none' : 'visible',
-      'padding': '0 16px',
-      'color': disabled ? colors.disabled : colors.white,
-      'fontSize': '16px',
-      '&:hover': { color: colors.disabled },
-    }}
-  >
-    {children}
-  </a>
-)
+export const MenuItem = ({ children, link, disabled }: MenuItemProps) => {
+  const isDesktop = useMediaQuery({
+    query: '(min-device-width: 768px)',
+  })
+
+  return (
+    <a
+      href={link}
+      css={{
+        'pointerEvents': disabled ? 'none' : 'visible',
+        'padding': `${isDesktop ? 0 : '5px'} 16px`,
+        'color': disabled ? colors.disabled : colors.white,
+        'fontSize': isDesktop ? '16px' : '21px',
+        'font-weight': '600',
+        '&:hover': { color: colors.disabled },
+        'display': 'flex',
+        'alignItems': 'center',
+      }}
+    >
+      <span>{children}</span>
+    </a>
+  )
+}
 
 MenuItem.defaultProps = menuItemDefaultProps
 
