@@ -16,4 +16,13 @@ code {
 button {
   background: transparent;
   border: none;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
 }

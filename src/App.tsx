@@ -1,12 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import { Header } from './components'
+import colors from './utils/colors'
 
 function App() {
   return (
     <div>
       <div
         css={{
-          'background': 'black',
+          'background': colors.black,
           'height': '100vh',
           'width': '100vw',
           'position': 'absolute',

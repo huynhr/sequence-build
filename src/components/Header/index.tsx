@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { useMediaQuery } from 'react-responsive'
-import Logo from '../Logo'
+import DesktopMenu from './DesktopMenu'
 import MobileMenu from './MobileMenu'
 
 const Header = () => {
@@ -26,7 +26,7 @@ const Header = () => {
         },
       }}
     >
-      {isDesktop && <Logo />}
+      {isDesktop && <DesktopMenu />}
       {!isDesktop && <MobileMenu />}
     </div>
   )

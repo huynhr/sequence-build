@@ -3,6 +3,7 @@ import { useState } from 'react'
 import HamburgerMenu from '../../../assets/mobile_menu.png'
 import MobileLogo from '../../../assets/mobile_logo.png'
 import CloseIcon from '../../../assets/close_button.png'
+import colors from '../../../utils/colors'
 
 const MobileMenu = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -17,8 +18,7 @@ const MobileMenu = () => {
       {menuOpen && (
         <div
           css={{
-            background:
-              'linear-gradient(83.57deg,transparent 13.55%,rgba(34,201,191,.05) 98.35%),linear-gradient(265.77deg,transparent 44.4%,rgba(92,47,115,.2) 110.31%),#111',
+            background: colors.mobileBackGround,
             height: '509px',
             left: '0px',
             position: 'absolute',
