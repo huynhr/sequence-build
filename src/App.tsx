@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { Header } from './components'
+import { Form, Header } from './components'
 import colors from './utils/colors'
 import cardGridData from './utils/cardGridData.json'
 import CardGrid from './components/CardGrid/index'
@@ -19,6 +19,7 @@ function App() {
       />
       <Header />
       <CardGrid data={cardGridData} />
+      <Form />
     </div>
   )
 }
