@@ -10,7 +10,7 @@ function App() {
       <div
         css={{
           'background': colors.black,
-          'height': '100%',
+          'height': '100vh',
           'max-height': '100%',
           'width': '100vw',
           'position': 'absolute',

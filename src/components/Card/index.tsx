@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { useState } from 'react'
+import { useMediaQuery } from 'react-responsive'
 import colors from '../../utils/colors'
 
 interface Props {
@@ -9,10 +10,16 @@ interface Props {
 
 const Card = ({ title, description }: Props) => {
   const [isShown, setIsShown] = useState(false)
+
+  const isDesktop = useMediaQuery({
+    query: '(min-device-width: 768px)',
+  })
+
   return (
     <button
       type="button"
       css={{
+        display: `${isDesktop ? 'flex' : 'inherit'}`,
         background: isShown ? colors.cardHover : '',
         backgroundColor: isShown ? colors.cardHover : colors.cardBackground,
         borderRadius: '20px',
@@ -25,7 +32,7 @@ const Card = ({ title, description }: Props) => {
       onMouseEnter={() => setIsShown(true)}
       onMouseLeave={() => setIsShown(false)}
     >
-      {!isShown && <h4>{title}</h4>}
+      {!isShown && <h4 css={{ fontSize: `${isDesktop ? '18px' : '16px'}` }}>{title}</h4>}
       {isShown && (
         <p
           css={{
@@ -36,6 +43,7 @@ const Card = ({ title, description }: Props) => {
             overflow: 'auto',
             maxWidth: '100%',
             textAlign: 'start',
+            fontSize: `${isDesktop ? '18px' : '16px'}`,
           }}
         >
           {description}
