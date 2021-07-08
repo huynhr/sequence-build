@@ -24,15 +24,17 @@ export const MenuItem = ({ children, link, disabled }: MenuItemProps) => {
       css={{
         'pointerEvents': disabled ? 'none' : 'visible',
         'padding': `${isDesktop ? 0 : '5px'} 16px`,
-        'color': disabled ? colors.disabled : colors.white,
         'fontSize': isDesktop ? '16px' : '21px',
         'font-weight': '600',
-        '&:hover': { color: colors.disabled },
         'display': 'flex',
         'alignItems': 'center',
       }}
     >
-      <span>{children}</span>
+      <span
+        css={{ 'color': disabled ? colors.disabled : colors.white, '&:hover': { color: colors.disabled } }}
+      >
+        {children}
+      </span>
     </a>
   )
 }

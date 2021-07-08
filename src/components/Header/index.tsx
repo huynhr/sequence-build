@@ -9,7 +9,7 @@ const Header = () => {
   })
 
   return (
-    <div
+    <nav
       css={{
         'background': 'transparent',
         'display': 'flex',
@@ -28,7 +28,7 @@ const Header = () => {
     >
       {isDesktop && <DesktopMenu />}
       {!isDesktop && <MobileMenu />}
-    </div>
+    </nav>
   )
 }
 

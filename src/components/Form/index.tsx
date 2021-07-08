@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 import colors from '../../utils/colors'
 import Button from '../Button'
 import Input from '../Input'
@@ -14,7 +14,9 @@ const Form = () => {
     tellUs: '',
   })
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: any): void => {
+    e.preventDefault()
+
     alert(JSON.stringify(formState))
   }
 
@@ -47,7 +49,7 @@ const Form = () => {
           For additional support, reach out below.
         </p>
       </div>
-      <form onSubmit={(): void => handleSubmit()}>
+      <form onSubmit={(e: FormEvent<HTMLFormElement>): void => handleSubmit(e)}>
         <Input
           label="Your Email"
           name="email"
@@ -102,7 +104,12 @@ const Form = () => {
           }
         />
         <div css={{ textAlign: 'center' }}>
-          <Button btnType="secondary" type="button" text="Submit" onClick={handleSubmit} />
+          <Button
+            btnType="secondary"
+            type="button"
+            text="Submit"
+            onClick={(e: any): void => handleSubmit(e)}
+          />
         </div>
       </form>
       <p css={{ color: colors.disabled, textAlign: 'center', margin: '50px auto' }}>
