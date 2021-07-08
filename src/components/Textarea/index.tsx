@@ -1,24 +1,24 @@
 /** @jsxImportSource @emotion/react */
 
-import { FC, InputHTMLAttributes } from 'react'
+import { FC, TextareaHTMLAttributes } from 'react'
 import colors from '../../utils/colors'
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   name: string
   label: string
 }
 
-const Input: FC<InputProps> = ({ label, name, ...rest }: InputProps) => (
-  <div css={{ display: 'flex', flexDirection: 'column', marginBottom: '32px' }}>
+const Textarea: FC<TextareaProps> = ({ label, name, ...rest }: TextareaProps) => (
+  <div css={{ display: 'flex', flexDirection: 'column', minHeight: '200px', marginBottom: '32px' }}>
     <label htmlFor={name} css={{ 'marginBottom': '10px', 'color': colors.disabled, 'font-weight': '500' }}>
       {label}
     </label>
-    <input
+    <textarea
       css={{
         border: '2px solid #2a2a2a',
         backgroundColor: 'transparent',
         borderRadius: '15px',
-        minHeight: '60px',
+        minHeight: '200px',
         outline: 'none',
         padding: '0 20px',
         fontSize: '20px',
@@ -30,4 +30,4 @@ const Input: FC<InputProps> = ({ label, name, ...rest }: InputProps) => (
   </div>
 )
 
-export default Input
+export default Textarea
