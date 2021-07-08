@@ -14,18 +14,30 @@ const Button: FC<ButtonProps> = ({ btnType, text, ...rest }: ButtonProps) => (
       // eslint-disable-next-line react/button-has-type
       <button
         css={{
-          'border': `2px solid ${colors.white}`,
-          'backgroundSize': '200%',
+          // 'border': `2px solid ${colors.white}`,
+          'background-image': colors.buttonOutline,
+          'border-radius': '20px',
+          // 'backgroundSize': '200%',
+          'padding': '2px',
           'borderRadius': '20px',
           'backgroundPositionS': '0',
           'display': 'inline-block',
           'transition': 'background-position-x .5s',
-          'padding': '10px',
           ':hover': { cursor: 'pointer' },
         }}
         {...rest}
       >
-        {text}
+        <div
+          css={{
+            'border-radius': '20px',
+            'background': colors.black,
+            'borderRadius': '20px',
+            'padding': '10px 25px',
+            ':hover': { cursor: 'pointer' },
+          }}
+        >
+          {text}
+        </div>
       </button>
     )}
     {btnType === 'secondary' && (
