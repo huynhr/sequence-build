@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import { ChangeEvent, useState } from 'react'
-// import { useMediaQuery } from 'react-responsive'
 import colors from '../../utils/colors'
 import Button from '../Button'
 import Input from '../Input'
@@ -15,21 +14,25 @@ const Form = () => {
     tellUs: '',
   })
 
-  // const isDesktop = useMediaQuery({
-  //   query: '(min-device-width: 768px)',
-  // })
-
   const handleSubmit = () => {
     alert(JSON.stringify(formState))
   }
 
   return (
-    <section css={{ margin: '20px auto', padding: '24px', maxWidth: '72rem' }}>
-      <div css={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <section css={{ margin: '100px auto', padding: '24px', maxWidth: '72rem' }}>
+      <div css={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '80px' }}>
         <h2
           css={{ textAlign: 'center', fontSize: '40px', marginBottom: '16px' }}
         >{`${"We're here to help"}`}</h2>
-        <p css={{ textAlign: 'center', fontSize: '18px', color: colors.disabled, maxWidth: '617px' }}>
+        <p
+          css={{
+            textAlign: 'center',
+            fontSize: '18px',
+            color: colors.disabled,
+            maxWidth: '617px',
+            // marginBottom: '20px',
+          }}
+        >
           Sequence helps you build the next generation of Internet economies and experiences.{' '}
           <a
             css={{ 'color': colors.white, ':visited': { color: colors.white } }}
@@ -102,6 +105,17 @@ const Form = () => {
           <Button btnType="secondary" type="button" text="Submit" onClick={handleSubmit} />
         </div>
       </form>
+      <p css={{ color: colors.disabled, textAlign: 'center', margin: '50px auto' }}>
+        We typically respond to inquiries within 48 hours
+        <br />
+        You can also email us directly{' '}
+        <a
+          css={{ 'color': colors.disabled, ':visited': { color: colors.disabled } }}
+          href="mailto:hello@sequence.build"
+        >
+          hello@sequence.build
+        </a>
+      </p>
     </section>
   )
 }

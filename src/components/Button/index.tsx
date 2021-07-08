@@ -14,13 +14,14 @@ const Button: FC<ButtonProps> = ({ btnType, text, ...rest }: ButtonProps) => (
       // eslint-disable-next-line react/button-has-type
       <button
         css={{
-          border: `2px solid ${colors.white}`,
-          backgroundSize: '200%',
-          borderRadius: '20px',
-          backgroundPositionS: '0',
-          display: 'inline-block',
-          transition: 'background-position-x .5s',
-          padding: '10px',
+          'border': `2px solid ${colors.white}`,
+          'backgroundSize': '200%',
+          'borderRadius': '20px',
+          'backgroundPositionS': '0',
+          'display': 'inline-block',
+          'transition': 'background-position-x .5s',
+          'padding': '10px',
+          ':hover': { cursor: 'pointer' },
         }}
         {...rest}
       >
@@ -31,13 +32,14 @@ const Button: FC<ButtonProps> = ({ btnType, text, ...rest }: ButtonProps) => (
       // eslint-disable-next-line react/button-has-type
       <button
         css={{
-          backgroundImage: colors.buttonBackground,
-          backgroundSize: '200%',
-          borderRadius: '30px',
-          backgroundPositionS: '0',
-          display: 'inline-block',
-          transition: 'background-position-x .5s',
-          padding: '10px 40px',
+          'backgroundImage': colors.buttonBackground,
+          'backgroundSize': '200%',
+          'borderRadius': '30px',
+          'backgroundPositionS': '0',
+          'display': 'inline-block',
+          'transition': 'background-position-x .5s',
+          'padding': '10px 40px',
+          ':hover': { cursor: 'pointer' },
         }}
         {...rest}
       >

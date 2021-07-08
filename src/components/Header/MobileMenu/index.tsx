@@ -54,7 +54,9 @@ const MobileMenu = () => {
             </Menu>
           </section>
           <section css={{ padding: '24px' }}>
-            <Button btnType="secondary" type="button" text="Launch Wallet" />
+            <a href="https://sequence.app/auth" target="_blank" rel="noreferrer">
+              <Button btnType="primary" type="button" text="Launch Wallet" />
+            </a>
           </section>
         </div>
       )}

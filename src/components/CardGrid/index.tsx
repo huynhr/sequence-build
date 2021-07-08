@@ -21,7 +21,7 @@ const CardGrid = ({ data }: Props) => {
       css={{
         maxWidth: '78rem',
         height: `${isDesktop ? '557px' : '100%'}`,
-        margin: '50px auto',
+        margin: '100px auto',
         padding: ' 0 24px',
       }}
     >

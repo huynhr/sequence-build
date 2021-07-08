@@ -14,7 +14,9 @@ const DesktopMenu = () => (
       <MenuItem link="#">Github</MenuItem>
       <MenuItem link="#">Discord</MenuItem>
       <MenuItem link="#">Contact</MenuItem>
-      <Button type="button" btnType="primary" text="Launch Wallet" />
+      <a href="https://sequence.app/auth" target="_blank" rel="noreferrer">
+        <Button btnType="primary" type="button" text="Launch Wallet" />
+      </a>
     </Menu>
   </div>
 )
