@@ -18,6 +18,7 @@ const Textarea: FC<TextareaProps> = ({ label, name, ...rest }: TextareaProps) =>
         border: '2px solid #2a2a2a',
         backgroundColor: 'transparent',
         borderRadius: '15px',
+        fontFamily: 'arial',
         minHeight: '200px',
         outline: 'none',
         padding: '0 20px',

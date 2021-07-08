@@ -54,7 +54,7 @@ const MobileMenu = () => {
             </Menu>
           </section>
           <section css={{ padding: '24px' }}>
-            <Button text="Launch Wallet" />
+            <Button btnType="secondary" type="button" text="Launch Wallet" />
           </section>
         </div>
       )}

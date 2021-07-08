@@ -44,7 +44,7 @@ const Form = () => {
           For additional support, reach out below.
         </p>
       </div>
-      <form>
+      <form onSubmit={(): void => handleSubmit()}>
         <Input
           label="Your Email"
           name="email"
@@ -99,7 +99,7 @@ const Form = () => {
           }
         />
         <div css={{ textAlign: 'center' }}>
-          <Button type="secondary" text="Submit" onClick={handleSubmit} />
+          <Button btnType="secondary" type="button" text="Submit" onClick={handleSubmit} />
         </div>
       </form>
     </section>

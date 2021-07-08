@@ -14,7 +14,7 @@ const DesktopMenu = () => (
       <MenuItem link="#">Github</MenuItem>
       <MenuItem link="#">Discord</MenuItem>
       <MenuItem link="#">Contact</MenuItem>
-      <Button text="Launch Wallet" />
+      <Button type="button" btnType="primary" text="Launch Wallet" />
     </Menu>
   </div>
 )

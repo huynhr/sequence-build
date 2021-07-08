@@ -1,23 +1,18 @@
 /** @jsxImportSource @emotion/react */
 
+import { FC, ButtonHTMLAttributes } from 'react'
 import colors from '../../utils/colors'
 
-interface ButtonProps {
-  type?: 'primary' | 'secondary'
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  btnType: 'primary' | 'secondary'
   text: string
-  onClick?: () => void
 }
 
-const defaultProps = {
-  type: 'primary',
-  onClick: () => {},
-}
-
-const Button = ({ type, text, onClick }: ButtonProps) => (
+const Button: FC<ButtonProps> = ({ btnType, text, ...rest }: ButtonProps) => (
   <>
-    {type === 'primary' && (
+    {btnType === 'primary' && (
+      // eslint-disable-next-line react/button-has-type
       <button
-        type="button"
         css={{
           border: `2px solid ${colors.white}`,
           backgroundSize: '200%',
@@ -27,14 +22,14 @@ const Button = ({ type, text, onClick }: ButtonProps) => (
           transition: 'background-position-x .5s',
           padding: '10px',
         }}
-        onClick={onClick}
+        {...rest}
       >
         {text}
       </button>
     )}
-    {type === 'secondary' && (
+    {btnType === 'secondary' && (
+      // eslint-disable-next-line react/button-has-type
       <button
-        type="button"
         css={{
           backgroundImage: colors.buttonBackground,
           backgroundSize: '200%',
@@ -44,14 +39,12 @@ const Button = ({ type, text, onClick }: ButtonProps) => (
           transition: 'background-position-x .5s',
           padding: '10px 40px',
         }}
-        onClick={onClick}
+        {...rest}
       >
         {text}
       </button>
     )}
   </>
 )
-
-Button.defaultProps = defaultProps
 
 export default Button
